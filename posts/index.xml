@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Blog</title>
-    <link>http://jenyckee.github.io/posts/</link>
+    <link>https://jenyckee.github.io/posts/</link>
     <description>Recent content in Posts on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Mar 2018 17:46:56 +0100</lastBuildDate>
     
-	<atom:link href="http://jenyckee.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenyckee.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Fatbiking in the Cairngorms</title>
-      <link>http://jenyckee.github.io/posts/cairngorms/</link>
+      <link>https://jenyckee.github.io/posts/cairngorms/</link>
       <pubDate>Sun, 04 Mar 2018 17:46:56 +0100</pubDate>
       
-      <guid>http://jenyckee.github.io/posts/cairngorms/</guid>
+      <guid>https://jenyckee.github.io/posts/cairngorms/</guid>
       <description>This winter in December I took a little escape from work to the Cairngorms national park in Scotland. I had been curious about riding a fatbike for quite some time and after seeing &amp;ldquo;Mountain Bikes and Bothy Nights&amp;rdquo; by Alastair Humphreys, a great video about bothy culture.
   Other than that I Recently have been intrigued by steel bike frames. This for a couple of reasons. Steel bike frames are usually stiffer, though heavier than aluminum frames.</description>
     </item>
     
     <item>
       <title>Polymorphism in TypeScript</title>
-      <link>http://jenyckee.github.io/posts/polymorphism-in-typescript/</link>
+      <link>https://jenyckee.github.io/posts/polymorphism-in-typescript/</link>
       <pubDate>Sun, 04 Mar 2018 17:46:56 +0100</pubDate>
       
-      <guid>http://jenyckee.github.io/posts/polymorphism-in-typescript/</guid>
+      <guid>https://jenyckee.github.io/posts/polymorphism-in-typescript/</guid>
       <description>runtime polymorphism Polymorphism is the provision of a single interface to entities of different types. It is a powerful mechanism that allows to treat different class instances through the same interface. The most well known form of polymorphism is probably runtime polymorphism. The canonical example for this form would be to calculate the surface area of shapes. In TypeScript this could be done like so:
  Ad hoc polymorphism Languages such as Haskell or C++ also offer ad hoc polymorphism or method overloading, meaning that the same function will act differently depending on the types of the arguments provided.</description>
     </item>
