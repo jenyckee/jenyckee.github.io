@@ -21,15 +21,5 @@
   Other than that I Recently have been intrigued by steel bike frames. This for a couple of reasons. Steel bike frames are usually stiffer, though heavier than aluminum frames.</description>
     </item>
     
-    <item>
-      <title>Polymorphism in TypeScript</title>
-      <link>https://jenyckee.github.io/posts/polymorphism-in-typescript/</link>
-      <pubDate>Sun, 04 Mar 2018 17:46:56 +0100</pubDate>
-      
-      <guid>https://jenyckee.github.io/posts/polymorphism-in-typescript/</guid>
-      <description>runtime polymorphism Polymorphism is the provision of a single interface to entities of different types. It is a powerful mechanism that allows to treat different class instances through the same interface. The most well known form of polymorphism is probably runtime polymorphism. The canonical example for this form would be to calculate the surface area of shapes. In TypeScript this could be done like so:
- Ad hoc polymorphism Languages such as Haskell or C++ also offer ad hoc polymorphism or method overloading, meaning that the same function will act differently depending on the types of the arguments provided.</description>
-    </item>
-    
   </channel>
 </rss>
