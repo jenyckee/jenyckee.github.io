@@ -21,5 +21,24 @@
   Other than that I Recently have been intrigued by steel bike frames. This for a couple of reasons. Steel bike frames are usually stiffer, though heavier than aluminum frames.</description>
     </item>
     
+    <item>
+      <title>Thoughts on TypeScript</title>
+      <link>https://jenyckee.github.io/posts/polymorphism-in-typescript/</link>
+      <pubDate>Thu, 01 Feb 2018 17:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/polymorphism-in-typescript/</guid>
+      <description>Intention The intention of this post is not to give a complete overview of the pros and cons of using TypeScript for front end development but rather to sum up some thoughts on TypeScript that come from my own experience of working with it.
+Boilerplate code One of the occasions where I would consider using TypeScript would be on projects that have a large codebase that will be developed and maintained by a large team of developers.</description>
+    </item>
+    
+    <item>
+      <title>Time for a blog</title>
+      <link>https://jenyckee.github.io/posts/hugo-blogs/</link>
+      <pubDate>Tue, 12 Sep 2017 18:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/hugo-blogs/</guid>
+      <description>My set up For this blog I&amp;rsquo;ll be using Hugo, a static site generator that I&amp;rsquo;ve been using for several projects at the moment. Because in my search for a good and easy solution to host on Github pages I didn&amp;rsquo;t find a good source of information on what in fact is dead simple, I will start with giving a short guid on how I set up my site.</description>
+    </item>
+    
   </channel>
 </rss>
