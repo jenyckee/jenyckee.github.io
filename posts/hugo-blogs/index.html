@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Time for a blog | Blog</title>
+<title>Time for a website | Blog</title>
 
 
 <link rel="stylesheet" href="https://jenyckee.github.io/css/style.css"/><link rel='stylesheet' href='/css/custom.css'><script
@@ -67,30 +67,34 @@
       
     </div>
     <h2 class="subtitle is-6">September 12, 2017</h2>
-    <h1 class="title">Time for a blog</h1>
+    <h1 class="title">Time for a website</h1>
     
     <div class="content">
       
 
 <h2 id="my-set-up">My set up</h2>
 
-<p>For this blog I&rsquo;ll be using Hugo, a static site generator that I&rsquo;ve been using for several projects at the moment. Because in my search for a good and easy solution to host on Github pages I didn&rsquo;t find a good source of information on what in fact is dead simple, I will start with giving a short guid on how I set up my site.</p>
+<p>For this site I&rsquo;ll be using Hugo, a static site generator that I&rsquo;ve been using for several projects at the moment. Because in my search for a good and easy solution to host on Github pages I didn&rsquo;t find a good source of information, I will start off with giving a short guid on how I set up my site.</p>
 
-<p>Assuming that you have set up your website using the guide on the Hugo website you will have a folder with the source of your website. To deploy to Github Pages you will need to create a repository that has the index.html file at the root on the master branch. Unfortanetly Hugo builds the pages into a public folder. Therefore I have a solution based on the <a href="https://jaspervdj.be/hakyll/tutorials/github-pages-tutorial.html">hakyll</a> approach. I keep the source for the website in my local repository on a develop branch, and the build on the master.</p>
+<p>Assuming that you have set up your website using the guide on the Hugo website you will have a folder with the source of your website. To deploy to Github Pages you will need to create a repository that has the index.html file at the root on the master branch. Unfortanetly Hugo builds the pages into a folder named public. To overcome this, I have a solution based on <a href="https://jaspervdj.be/hakyll/tutorials/github-pages-tutorial.html">this</a> approach. I keep the source for the website in my local repository on a develop branch, and the build on the master.</p>
 
 <h2 id="github-setup">Github Setup</h2>
 
-<p>After creating the repository on Github add a .gitignore file to the master branch that looks like this</p>
+<p>After creating the repository on Github, add a .gitignore file to the master branch that looks like this</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">themes/
 public/</code></pre></div>
 
+<p>This will make sure the build of the website and the theme being stays untracked in the Git repository.</p>
+
 <h2 id="local-setup">Local Setup</h2>
+
+<p>Then locally, initialize a Git repository at the root of your site and checkout a develop branch immediately. Commit your files and add Github as a remote.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
 <span style="color:#75715e"># create new branch called develop and switch to it.
 </span><span style="color:#75715e"></span>git checkout -b develop
-<span style="color:#75715e"># track all the source files for our blog.
+<span style="color:#75715e"># track all the source files for our site.
 </span><span style="color:#75715e"></span>git add .
 <span style="color:#75715e"># make our first commit
 </span><span style="color:#75715e"></span>git commit -m <span style="color:#e6db74">&#34;initial commit.&#34;</span>
@@ -99,7 +103,7 @@ public/</code></pre></div>
 
 <h2 id="deploying">Deploying</h2>
 
-<p>To deploy create a file deploy.sh and make it executable.</p>
+<p>To deploy create a file deploy.sh and make it executable. This script will build the website into the public folder and then checkout to the master branch. Since the public folder is untracked we can use this to copy everything to the root, commit that to the master branch and push that to the Github remote. Once that is done we have succesfully deployed, we can now checkout the develop branch again and delete the master branch locally.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
@@ -130,6 +134,8 @@ git commit -m <span style="color:#e6db74">&#34;Publish.&#34;</span>
 </span><span style="color:#75715e"></span>git checkout develop
 git branch -D master
 git stash pop</code></pre></div>
+
+<h1 id="keep-source-private">Keep source private</h1>
 
 <p>Finally I host the actual source of my website on a private bitbucket account by setting your upstream for the develop branch to the Bitbucket repo.</p>
 
