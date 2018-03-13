@@ -10,3 +10,16 @@
 .gist table td {
   border: none;
 }
+.text-center {
+  text-align: center;
+}
+nav h1 {
+  font-size: 2rem;
+}
+nav a {
+  color: #222324;
+}
+nav .icon {
+  width: 16px;
+  height: 16px;
+}
