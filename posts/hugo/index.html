@@ -77,7 +77,7 @@
 
 <h2 id="my-set-up">My set up</h2>
 
-<p>For this site I&rsquo;ll be using Hugo, a static site generator that I&rsquo;ve been using for several projects at the moment. Because in my search for a good and easy solution to host on Github pages I didn&rsquo;t find a good source of information, I will start off with giving a short guid on how I set up my site.</p>
+<p>For this site I&rsquo;ll be using Hugo, a static site generator that I&rsquo;ve been using for several projects at the moment. Because in my search for a good and easy solution to host on Github pages I didn&rsquo;t find a good source of information, I will start off with giving a short guide on how I set up my site.</p>
 
 <p>Assuming that you have set up your website using the guide on the Hugo website you will have a folder with the source of your website. To deploy to Github Pages you will need to create a repository that has the index.html file at the root on the master branch. Unfortanetly Hugo builds the pages into a folder named public. To overcome this, I have a solution based on <a href="https://jaspervdj.be/hakyll/tutorials/github-pages-tutorial.html">this</a> approach. I keep the source for the website in my local repository on a develop branch, and the build on the master.</p>
 
@@ -140,7 +140,7 @@ git stash pop</code></pre></div>
 
 <h1 id="keep-source-private">Keep source private</h1>
 
-<p>Finally I host the actual source of my website on a private bitbucket account by setting your upstream for the develop branch to the Bitbucket repo.</p>
+<p>Finally I host the actual source of my website on a private Bitbucket account by setting your upstream for the develop branch to the Bitbucket repository.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Add bitbucket as a remote
 </span><span style="color:#75715e"></span>git remote add bitbucket https://bitbucket.com/user/repo.git
