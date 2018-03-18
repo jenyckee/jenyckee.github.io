@@ -48,7 +48,7 @@ function render(data) {
   var div = d3.select("#villoviz")
     .append("div")
     .attr("style", `
-        position: absolute;
+        position: fixed;
         text-align: center;
         width: auto;
         height: auto;
@@ -83,8 +83,8 @@ function render(data) {
              .duration(200)
              .style("opacity", .9);
           div.html(d.fields.name + "<br/>" + d.fields.available_bikes + " Free Bikes")
-             .style("left", (d3.event.pageX +5) + "px")
-             .style("top", (d3.event.pageY +5) + "px");
+             .style("left", (d3.event.clientX +5) + "px")
+             .style("top", (d3.event.clientY +5) + "px");
 		    })
   });
 
