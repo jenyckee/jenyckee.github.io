@@ -6,10 +6,20 @@
     <description>Recent content in About on Jeroen Nyckees</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Apr 2018 15:50:52 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 18 May 2018 22:00:22 +0200</lastBuildDate>
     
 	<atom:link href="https://jenyckee.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reacteurope</title>
+      <link>https://jenyckee.github.io/posts/reacteurope/</link>
+      <pubDate>Fri, 18 May 2018 22:00:22 +0200</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/reacteurope/</guid>
+      <description>This week I was lucky enough to be part of the React Europe conference in Paris. I would like to write down some of the ideas that resonated with me. To do this I will focus on 3 big themes that seemed to come back in all of the talks.
+Context and Suspense Since React 16.3 Context and Suspense are two new features that will shape the architectures of client side React applications.</description>
+    </item>
     
     <item>
       <title>&#34;They Work for Nothing&#34;</title>
@@ -30,13 +40,13 @@
     </item>
     
     <item>
-      <title>Thoughts on TypeScript</title>
+      <title>TypeScript</title>
       <link>https://jenyckee.github.io/posts/polymorphism-in-typescript/</link>
       <pubDate>Thu, 01 Feb 2018 17:46:56 +0100</pubDate>
       
       <guid>https://jenyckee.github.io/posts/polymorphism-in-typescript/</guid>
-      <description>Intention The intention of this post is not to give a complete overview of the pros and cons of using TypeScript for front end development but rather to sum up some thoughts on TypeScript that come from my own experience of working with it.
-Boilerplate code One of the occasions where I would consider using TypeScript would be on projects that have a large codebase that will be developed and maintained by a large team of developers.</description>
+      <description>Intention The intention of this post is to sum up some thoughts on TypeScript that come from my own experience of working with it.
+As with all engineering the right tool for the job is always dependent on the context of the job. The context where I would consider using TypeScript would be on projects that have a large codebase that will be developed and maintained by a large team of developers that have preliminary JavaScript or TypeScript knowledge.</description>
     </item>
     
     <item>

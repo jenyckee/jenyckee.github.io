@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"  lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.37" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Jeroen Nyckees</title>
+<title>Reacteurope | Jeroen Nyckees</title>
 
 
 <link rel="stylesheet" href="https://jenyckee.github.io/css/style.css"/><link rel='stylesheet' href='/css/custom.css'><script
@@ -67,84 +66,45 @@
   
 <section class="section">
   <div class="container">
-      <p>I&rsquo;m Jeroen, I was born in 1991 in Bruges, Belgium. I currently live and work in Brussels as a software engineer. Before, I studied computer science at the Vrije Universiteit Brussel. I&rsquo;m particularly interested in the domain where art meets science.</p>
+    <div class="subtitle is-6 is-pulled-right">
+      
+    </div>
+    <h2 class="subtitle is-6">May 18, 2018</h2>
+    <h1 class="title">Reacteurope</h1>
+    
+    <div class="content">
+      
 
-<p>In my free time I love to do anything outdoors but most preferably riding a bike somewhere in the mountains.</p>
+<p>This week I was lucky enough to be part of the React Europe conference in Paris. I would like to write down some of the ideas that resonated with me. To do this I will focus on 3 big themes that seemed to come back in all of the talks.</p>
 
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    
-    <article>
-      <div class="subtitle is-6 is-pulled-right">
-        
-      </div>
-      <h2 class="subtitle is-6">May 18, 2018</h2>
-      <h1 class="title"><a href="https://jenyckee.github.io/posts/reacteurope/">Reacteurope</a></h1>
-    </article>
-    
-    <article>
-      <div class="subtitle is-6 is-pulled-right">
-        
-      </div>
-      <h2 class="subtitle is-6">April 26, 2018</h2>
-      <h1 class="title"><a href="https://jenyckee.github.io/posts/they-work-for-nothing/">&#34;They Work for Nothing&#34;</a></h1>
-    </article>
-    
-    <article>
-      <div class="subtitle is-6 is-pulled-right">
-        
-      </div>
-      <h2 class="subtitle is-6">March 6, 2018</h2>
-      <h1 class="title"><a href="https://jenyckee.github.io/posts/villoviz/">Visualizing the availability of Brussels villo bikes</a></h1>
-    </article>
-    
-    <article>
-      <div class="subtitle is-6 is-pulled-right">
-        
-      </div>
-      <h2 class="subtitle is-6">February 1, 2018</h2>
-      <h1 class="title"><a href="https://jenyckee.github.io/posts/polymorphism-in-typescript/">TypeScript</a></h1>
-    </article>
-    
-    <article>
-      <div class="subtitle is-6 is-pulled-right">
-        
-      </div>
-      <h2 class="subtitle is-6">December 14, 2017</h2>
-      <h1 class="title"><a href="https://jenyckee.github.io/posts/cairngorms/">Fatbiking in the Cairngorms</a></h1>
-    </article>
+<h1 id="context-and-suspense">Context and Suspense</h1>
+
+<p>Since React 16.3 Context and Suspense are two new features that will shape the architectures of client side React applications. Context is a feauture that has been around in the React API since quite a while. The use of it however has always been discouraged. A simple example that shows the power of it would be to show how we can simplify data fetching with it.</p>
+
+<script src="//gist.github.com/jenyckee/180555233de38d2a680667d4c1212610.js"></script>
+
+<p>Suspense is an experimental feature that continues on this idea and offers extra abstractions on the lifecycle of data fetching. Therefore it provides <code>simple-cache-provider</code>. The API offers you abstractions to fetch your data and cache it for future use. Moreover it is a provider that will pass a flag that let&rsquo;s you check whether or not your data is done fetching.</p>
+
+<script src="//gist.github.com/jenyckee/c2c0c6d110b00ecc5eb0454f40e865f6.js"></script>
+
+<p>Apollo&rsquo;s implementation of GraphQL plays nicely together with these new React features.</p>
+
+<h1 id="the-web-as-just-a-compile-target">The web as just a compile target</h1>
+
+<p>With projects such as <a href="https://github.com/airbnb/lona">Lona</a> and <a href="https://github.com/necolas/react-native-web">React Native Web</a> it is time to see the web as just another target and React as a high level tool that facilitate the implementation of our applications.</p>
+
+<p>Sven Sauleau came to convince us of that by promoting <a href="https://webassembly.org/">WebAssembly</a> the next biggest platform. This doesn&rsquo;t mean JavaScript will disappear but rather that we will be able to use modern languages such as C++ or Rust to compile to WASM where we need the extra performance. For example we have already seen that <a href="https://blogs.unity3d.com/2015/06/18/webgl-webassembly-and-feature-roadmap/">Unity</a> is doing efforts to support the web as compile target. This still young technology is very exciting in my opinion.</p>
+
+<h1 id="reasonml">ReasonML</h1>
+
+<p>JavaScript is great, it is very versatile and allows you to write proof of concept applications in no time. It was however never made to build large scale applications. This is where languages such as TypeScript or Flow can help you by providing a static type system. However, these languages are still not perfect for client side application development. More recently, strongly typed languages such as Elm and <a href="https://reasonml.github.io/reason-react/">ReasonML</a> are being adopted to provide a better developer experience and quality code. ReasonML is a OCaml dialect that compiles to JavaScript and offers type safety with good JavaScript interop. It is a strongly typed language with syntax that is much more friendly to JavaScript developers than Elm and it enforces immutability. Because of the good JavaScript interop we can use <a href="https://yarnpkg.com/lang/en/">Yarn</a> and thus make use of the whole React ecosystem.</p>
+
+      
+    </div>
     
   </div>
 </section>
-<section class="section">
-  <div class="container">
-    <nav class="level is-mobile">
-      <div class="level-left">
-        <div class="level-item">
-          
-        </div>
-      </div>
-      <div class="level-right is-marginless">
-        <div class="level-item">
-          
-          <a class="button" href="/page/2/">
-            Older
-            <span class="icon is-small is-marginless">
-              <svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <polyline points="14 6 20 12 14 18"/>
-    
-  </svg>
-            </span>
-          </a>
-          
-        </div>
-      </div>
-    </nav>
-  </div>
-</section>
+
 
 <section class="section">
   <div class="container has-text-centered">

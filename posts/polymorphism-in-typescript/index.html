@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Thoughts on TypeScript | Jeroen Nyckees</title>
+<title>TypeScript | Jeroen Nyckees</title>
 
 
 <link rel="stylesheet" href="https://jenyckee.github.io/css/style.css"/><link rel='stylesheet' href='/css/custom.css'><script
@@ -70,22 +70,18 @@
       
     </div>
     <h2 class="subtitle is-6">February 1, 2018</h2>
-    <h1 class="title">Thoughts on TypeScript</h1>
+    <h1 class="title">TypeScript</h1>
     
     <div class="content">
       
 
-<h2 id="intention">Intention</h2>
+<h1 id="intention">Intention</h1>
 
-<p>The intention of this post is not to give a complete overview of the pros and cons of using TypeScript for front end development but rather to sum up some thoughts on TypeScript that come from my own experience of working with it.</p>
+<p>The intention of this post is to sum up some thoughts on TypeScript that come from my own experience of working with it.</p>
 
-<h2 id="boilerplate-code">Boilerplate code</h2>
+<p>As with all engineering the right tool for the job is always dependent on the context of the job. The context where I would consider using TypeScript would be on projects that have a large codebase that will be developed and maintained by a large team of developers that have preliminary JavaScript or TypeScript knowledge. The advantages that come with using TypeScript will in my opinion outweigh the effort that has to spend on set up and the large amounts of boiler plate code that has to be written compared to using JavaScript. When setting up a proof of concept or a rather small project JavaScript will do just fine for my needs.</p>
 
-<p>One of the occasions where I would consider using TypeScript would be on projects that have a large codebase that will be developed and maintained by a large team of developers. The advantages that come with using TypeScript will in my opinion outweigh the effort that has to spend on set up and the large amounts of boiler plate code that has to be written compared to using JavaScript. When setting up a proof of concept or a rather small project JavaScript will do just fine for my needs.</p>
-
-<h2 id="polymorphism">Polymorphism</h2>
-
-<p>Polymorphism is the provision of a single interface to entities of different types. It is a powerful mechanism that allows to treat different class instances through the same interface. The most well known form of polymorphism is probably runtime polymorphism. The canonical example for this form would be to calculate the surface area of shapes. In TypeScript this could be done like so:</p>
+<p>If you can afford however to invest in using something like Elm or ReasonMl I think this can definitely pay off. This because TypeScript does not do a good job at Polymorphism. Polymorphism is the provision of a single interface to entities of different types. It is a powerful mechanism that allows to treat different class instances through the same interface. The most well known form of polymorphism is probably runtime polymorphism. The canonical example for this form would be to calculate the surface area of shapes. In TypeScript this could be done like so:</p>
 
 <script src="//gist.github.com/jenyckee/db89e38b406f0ac6b8a7a9bce5f0aa54.js"></script>
 
