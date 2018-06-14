@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Jeroen Nyckees</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 May 2018 22:00:22 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 14 Jun 2018 15:44:50 +0200</lastBuildDate>
     
 	<atom:link href="https://jenyckee.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WebGL Experiment</title>
+      <link>https://jenyckee.github.io/posts/webglexperiment/</link>
+      <pubDate>Thu, 14 Jun 2018 15:44:50 +0200</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/webglexperiment/</guid>
+      <description>This scene is a small project that I built in my free time that allowed me to experiment with writing custom materials shader textures and post processing effects in Three.js. Ping me if you&amp;rsquo;re interested in the source code.
+ </description>
+    </item>
     
     <item>
       <title>Reacteurope</title>
