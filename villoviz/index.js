@@ -24,7 +24,7 @@ function render(data) {
   //Define path generator
   var path = d3.geoPath()
             .projection(projection);
-    
+
   //Create SVG
   var svg = d3.select("#villoviz")
     .append("svg")
@@ -41,10 +41,6 @@ function render(data) {
     .attr("max","43")
     .attr("step","1")
 
-  var slider = d3.select("#villoviz")
-    .append("span")
-    .attr("id", "time-indicator")
-  
   var div = d3.select("#villoviz")
     .append("div")
     .attr("style", `
@@ -67,7 +63,6 @@ function render(data) {
         .enter()
         .append("path")
         .attr("d", path)
-        .attr("class","Municipality")
         .attr("fill","#ccc")
         .attr("stroke", "#3f87a6")
 
@@ -77,7 +72,7 @@ function render(data) {
         .attr("cx", d => projection(d.geometry.coordinates)[0])
         .attr("cy", d => projection(d.geometry.coordinates)[1])
         .attr("r", d => dotSize(d.fields))
-        .attr("fill", d=> color(d.fields))
+        .attr("fill", d => color(d.fields))
         .on("mouseover", function(d) {
           div.transition()
              .duration(200)
@@ -120,10 +115,8 @@ function render(data) {
     return stations.filter(s => s.fields.number == station.number)[0]
   }
 
-
   function color(station, i) {
     const free = (station.available_bikes / station.bike_stands);
-
     return station.status === "CLOSED" || !free ? "red" : colorBySlope(station, i);
   }
 

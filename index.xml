@@ -6,20 +6,10 @@
     <description>Recent content in About on Jeroen Nyckees</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Jun 2018 15:44:50 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 18 May 2018 22:00:22 +0200</lastBuildDate>
     
 	<atom:link href="https://jenyckee.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>WebGL Experiment</title>
-      <link>https://jenyckee.github.io/posts/webglexperiment/</link>
-      <pubDate>Thu, 14 Jun 2018 15:44:50 +0200</pubDate>
-      
-      <guid>https://jenyckee.github.io/posts/webglexperiment/</guid>
-      <description>This scene is a small project that I built in my free time that allowed me to experiment with writing custom materials shader textures and post processing effects in Three.js. Ping me if you&amp;rsquo;re interested in the source code.
- </description>
-    </item>
     
     <item>
       <title>React Europe</title>
@@ -46,7 +36,7 @@ Context and Suspense Since React 16.3 Context and Suspense are two new features 
       <pubDate>Tue, 06 Mar 2018 18:46:56 +0100</pubDate>
       
       <guid>https://jenyckee.github.io/posts/villoviz/</guid>
-      <description>After exploring what the city of Brussel is exposing in its open data platform I decide to do something with the data on the Villo bikes. Villo is a local bike sharing system by the city that allows you to take out a bike at one bike station and leave it at another. The Brussels open data platform has an endpoint that gives a live feed of the availability of each of the bike stations all over the city.</description>
+      <description>After exploring what the city of Brussel is exposing in its open data platform I decided to do something with the data on the Villo bikes. Villo is a local bike sharing system by the city that allows you to take out a bike at one bike station and leave it at another. The Brussels open data platform has an endpoint that gives a live feed of the availability of each of the bike stations all over the city.</description>
     </item>
     
     <item>
