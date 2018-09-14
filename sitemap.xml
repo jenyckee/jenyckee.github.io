@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jenyckee.github.io/posts/webglexperiment/</loc>
+    <lastmod>2018-09-14T16:11:19+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenyckee.github.io/posts/reacteurope/</loc>
     <lastmod>2018-05-18T22:00:22+02:00</lastmod>
   </url>
@@ -39,12 +44,12 @@
   
   <url>
     <loc>https://jenyckee.github.io/</loc>
-    <lastmod>2018-05-18T22:00:22+02:00</lastmod>
+    <lastmod>2018-09-14T16:11:19+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://jenyckee.github.io/posts/</loc>
-    <lastmod>2018-05-18T22:00:22+02:00</lastmod>
+    <lastmod>2018-09-14T16:11:19+02:00</lastmod>
     <priority>0</priority>
   </url>
   
