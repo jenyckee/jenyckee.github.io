@@ -75,11 +75,13 @@
     <div class="content">
       <iframe width="100%" height="400px" src="https://strava-trips.herokuapp.com/example"></iframe>
 
-<p>In the mourning process about last summer I decided to build something nice. Like most of us I meticulously record every bike ride I do with a popular app among athletes called Strava. Strava is often described as the Facebook for athletes. It works by simply hitting the start button when going out for a run or bike ride and it will record a series of GPS coordinates until you hit stop again. Afterwards the athlete gets a report that shows a map with the route followed alongside with some graphs on speed, hearth rate and other data.</p>
+<p>Like most cyclists I meticulously record every bike ride I do with a popular app among athletes called Strava. Strava is often described as the Facebook for athletes. It works by simply hitting the start button when going out for a run or bike ride and it will record a series of GPS coordinates until you hit stop again. Afterwards the athlete gets a report that shows a map with the route followed alongside with some graphs on speed, hearth rate and other data.</p>
 
 <p>Now I recently discovered that Strava offers an API that allows developers to build applications on top of their service using that data. The way it works is that a Strava user gives permission to a third party application that will in its turn allow the application to fetch the Strava data for that user.</p>
 
 <p>I have always been interested in the <a href="https://www.strava.com/heatmap">heatmap</a> project by Strava that shows where people bike frequently across the globe. For this project I thought it would be interesting to do something similar but then personalised for the athlete&rsquo;s bike rides.</p>
+
+<p>I set up an Express authentication server that allows me to fetch all the strava rides. Then I used Uber&rsquo;s WebGL visualization library <a href="https://deck.gl">deck.gl</a>. The library integrates very well with Mapbox and React and allows you to build very good looking GIS applications with very little configuration.</p>
 
 <p>The result of the project can be found <a href="https://strava-trips.herokuapp.com/">here</a>, the code for it is open and can be found on my <a href="https://github.com/jenyckee/strava-analysis">github</a>.</p>
 
