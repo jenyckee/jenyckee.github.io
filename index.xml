@@ -59,16 +59,6 @@ Context and Suspense Since React 16.3 Context and Suspense are two new features 
     </item>
     
     <item>
-      <title>TypeScript</title>
-      <link>https://jenyckee.github.io/posts/polymorphism-in-typescript/</link>
-      <pubDate>Thu, 01 Feb 2018 17:46:56 +0100</pubDate>
-      
-      <guid>https://jenyckee.github.io/posts/polymorphism-in-typescript/</guid>
-      <description>Intention The intention of this post is to sum up some thoughts on TypeScript that come from my own experience of working with it.
-As with all engineering the right tool for the job is always dependent on the context of the job. The context where I would consider using TypeScript would be on projects that have a large codebase that will be developed and maintained by a large team of developers that have preliminary JavaScript or TypeScript knowledge.</description>
-    </item>
-    
-    <item>
       <title>Fatbiking in the Cairngorms</title>
       <link>https://jenyckee.github.io/posts/cairngorms/</link>
       <pubDate>Thu, 14 Dec 2017 17:46:56 +0100</pubDate>
