@@ -6,9 +6,127 @@
     <description>Recent content in Tags on Jeroen Nyckees</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 14 Sep 2018 16:11:19 +0200</lastBuildDate>
     
 	<atom:link href="https://jenyckee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WebGL</title>
+      <link>https://jenyckee.github.io/tags/webgl/</link>
+      <pubDate>Fri, 14 Sep 2018 16:11:19 +0200</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/webgl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>conference</title>
+      <link>https://jenyckee.github.io/tags/conference/</link>
+      <pubDate>Fri, 18 May 2018 22:00:22 +0200</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/conference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>https://jenyckee.github.io/tags/react/</link>
+      <pubDate>Fri, 18 May 2018 22:00:22 +0200</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>travel</title>
+      <link>https://jenyckee.github.io/tags/travel/</link>
+      <pubDate>Thu, 26 Apr 2018 15:50:52 +0200</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>biking</title>
+      <link>https://jenyckee.github.io/tags/biking/</link>
+      <pubDate>Tue, 06 Mar 2018 18:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/biking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Brussel</title>
+      <link>https://jenyckee.github.io/tags/brussel/</link>
+      <pubDate>Tue, 06 Mar 2018 18:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/brussel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data visualization</title>
+      <link>https://jenyckee.github.io/tags/data-visualization/</link>
+      <pubDate>Tue, 06 Mar 2018 18:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/data-visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open data</title>
+      <link>https://jenyckee.github.io/tags/open-data/</link>
+      <pubDate>Tue, 06 Mar 2018 18:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/open-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Typescript</title>
+      <link>https://jenyckee.github.io/tags/typescript/</link>
+      <pubDate>Thu, 01 Feb 2018 17:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bikepacking</title>
+      <link>https://jenyckee.github.io/tags/bikepacking/</link>
+      <pubDate>Thu, 14 Dec 2017 17:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/bikepacking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elm</title>
+      <link>https://jenyckee.github.io/tags/elm/</link>
+      <pubDate>Sat, 04 Nov 2017 17:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/elm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://jenyckee.github.io/tags/git/</link>
+      <pubDate>Tue, 12 Sep 2017 18:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://jenyckee.github.io/tags/hugo/</link>
+      <pubDate>Tue, 12 Sep 2017 18:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
