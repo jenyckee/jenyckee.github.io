@@ -66,26 +66,24 @@
   
 <section class="section">
   <div class="container">
-    <div class="subtitle is-6 is-pulled-right">
+    <div class="subtitle tags is-6 is-pulled-right">
       
     </div>
     <h2 class="subtitle is-6">November 4, 2017</h2>
     <h1 class="title">Pure reducers in Elm</h1>
     
     <div class="content">
-      <p>One of the most defining courses I took during university was &ldquo;Functional Programming&rdquo;. After being introduced to other paradigms such as object oriented programming in the bachelor years it was possible to learn Haskell in this course and thus delve deeper into the functional programming paradigm. At the end of the course I developed a web application using <a href="http://snapframework.com/" >Snap</a>. After that I got more involved into front end development using JavaScript and always missed the developer experience that I got when programming in Haskell.</p>
-
+      <p>One of the most defining courses I took during university was &ldquo;Functional Programming&rdquo;. After being introduced to other paradigms such as object oriented programming in the bachelor years it was possible to learn Haskell in this course and thus delve deeper into the functional programming paradigm. At the end of the course I developed a web application using <!-- raw HTML omitted -->Snap<!-- raw HTML omitted -->. After that I got more involved into front end development using JavaScript and always missed the developer experience that I got when programming in Haskell.</p>
 <p>Recently I took the time to experiment with Elm for a small project at work since it is being advertised as a type safe programming language with &ldquo;no runtime exceptions in practice&rdquo;. Since these were exactly the things I like about haskell I had high expectations and I was very pleased with the experience. I used Microsoft Visual code with a plugin that offers syntax support and type checking.</p>
-
-<p>One thing that I <a href="https://github.com/elm-guides/elm-for-js/issues/5">(and apparently other people)</a> didn&rsquo;t like however is the way html templates are being written in Elm. This got me thinking about how it would be nice to be able to extract the data fetching logic from a react/redux application and make sure that those are handled with &ldquo;no runtime exceptions&rdquo; by writing them in Elm. Practically this would mean that we write reducers in Elm and treat them as black boxes from within a react redux application by just dispatching actions to them just as we are used to do with classical react/redux applications. This while still having react to handle the dom manipulation.</p>
-
-<p>To achieve this I developed bindings to React that are similar as the ones in the popular react-redux library. To ease the adoption I implemented the API identically as the react-redux bindings. Hence there is a connect function that takes a mapStateToProps and mapDispatchToProps function and returns a connector to connect React compoments to the store. The implementation makes use of the React context API in similar fashion as react-redux does. For those interested please have a look at the <a href="https://github.com/jenyckee/elm-redux">repository</a> where a small example is provided.</p>
+<p>One thing that I <!-- raw HTML omitted -->(and apparently other people)<!-- raw HTML omitted --> didn&rsquo;t like however is the way html templates are being written in Elm. This got me thinking about how it would be nice to be able to extract the data fetching logic from a react/redux application and make sure that those are handled with &ldquo;no runtime exceptions&rdquo; by writing them in Elm. Practically this would mean that we write reducers in Elm and treat them as black boxes from within a react redux application by just dispatching actions to them just as we are used to do with classical react/redux applications. This while still having react to handle the dom manipulation.</p>
+<p>To achieve this I developed bindings to React that are similar as the ones in the popular react-redux library. To ease the adoption I implemented the API identically as the react-redux bindings. Hence there is a connect function that takes a mapStateToProps and mapDispatchToProps function and returns a connector to connect React compoments to the store. The implementation makes use of the React context API in similar fashion as react-redux does. For those interested please have a look at the <!-- raw HTML omitted -->repository<!-- raw HTML omitted --> where a small example is provided.</p>
 
       
     </div>
     
   </div>
 </section>
+
 
 
 <section class="section">
@@ -96,12 +94,18 @@
 </section>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-105338404-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-105338404-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
 
 
 </body>

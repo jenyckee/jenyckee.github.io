@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Jeroen Nyckees</title>
@@ -6,19 +6,10 @@
     <description>Recent content in Posts on Jeroen Nyckees</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Nov 2018 11:40:33 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 14 Sep 2018 16:11:19 +0200</lastBuildDate>
     
 	<atom:link href="https://jenyckee.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Visualising Strava bike rides</title>
-      <link>https://jenyckee.github.io/posts/strava-trips/</link>
-      <pubDate>Thu, 08 Nov 2018 11:40:33 +0100</pubDate>
-      
-      <guid>https://jenyckee.github.io/posts/strava-trips/</guid>
-      <description>Like most cyclists I meticulously record every bike ride I do with a popular app among athletes called Strava. Strava is often described as the Facebook for athletes. It works by simply hitting the start button when going out for a run or bike ride and it will record a series of GPS coordinates until you hit stop again. Afterwards the athlete gets a report that shows a map with the route followed alongside with some graphs on speed, hearth rate and other data.</description>
-    </item>
     
     <item>
       <title>WebGL Experiment</title>
@@ -26,8 +17,7 @@
       <pubDate>Fri, 14 Sep 2018 16:11:19 +0200</pubDate>
       
       <guid>https://jenyckee.github.io/posts/webglexperiment/</guid>
-      <description>This scene is a small project that I built in my free time that allowed me to experiment with writing custom materials shader textures and post processing effects in Three.js. Ping me if you’re interested in the source code.
- </description>
+      <description>This scene is a small project that I built in my free time that allowed me to experiment with writing custom materials shader textures and post processing effects in Three.js. Ping me if you’re interested in the source code.</description>
     </item>
     
     <item>
@@ -56,6 +46,16 @@ Context and Suspense Since React 16.3 Context and Suspense are two new features 
       
       <guid>https://jenyckee.github.io/posts/villoviz/</guid>
       <description>After exploring what the city of Brussel is exposing in its open data platform I decided to do something with the data on the Villo bikes. Villo is a local bike sharing system by the city that allows you to take out a bike at one bike station and leave it at another. The Brussels open data platform has an endpoint that gives a live feed of the availability of each of the bike stations all over the city.</description>
+    </item>
+    
+    <item>
+      <title>TypeScript</title>
+      <link>https://jenyckee.github.io/posts/polymorphism-in-typescript/</link>
+      <pubDate>Thu, 01 Feb 2018 17:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/polymorphism-in-typescript/</guid>
+      <description>Intention The intention of this post is to sum up some thoughts on TypeScript that come from my own experience of working with it.
+As with all engineering the right tool for the job is always dependent on the context of the job. The context where I would consider using TypeScript would be on projects that have a large codebase that will be developed and maintained by a large team of developers that have preliminary JavaScript or TypeScript knowledge.</description>
     </item>
     
     <item>
