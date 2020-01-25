@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Jeroen Nyckees</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Sep 2018 16:11:19 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jan 2020 09:03:58 +0100</lastBuildDate>
     
 	<atom:link href="https://jenyckee.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Biking the Annapurna Circuit</title>
+      <link>https://jenyckee.github.io/posts/biking-the-annapurna-circuit/</link>
+      <pubDate>Sat, 25 Jan 2020 09:03:58 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/biking-the-annapurna-circuit/</guid>
+      <description>During last summer I was looking for inspiration to do a long term mountain biking trip that would be challenging but pretty risk free at the same time. I had a time frame of three weeks in November so I started to look into possibilities when quickly my eye fell on a flight to Kathmandu. Nepal ticked off all the boxes I was looking for in my next trip, so without too much overthinking slightly nervous I booked the flights.</description>
+    </item>
     
     <item>
       <title>WebGL Experiment</title>

@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Jeroen Nyckees</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Sep 2018 16:11:19 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jan 2020 09:03:58 +0100</lastBuildDate>
     
 	<atom:link href="https://jenyckee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>bikepacking</title>
+      <link>https://jenyckee.github.io/tags/bikepacking/</link>
+      <pubDate>Sat, 25 Jan 2020 09:03:58 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/bikepacking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>biking</title>
+      <link>https://jenyckee.github.io/tags/biking/</link>
+      <pubDate>Sat, 25 Jan 2020 09:03:58 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/biking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>travel</title>
+      <link>https://jenyckee.github.io/tags/travel/</link>
+      <pubDate>Sat, 25 Jan 2020 09:03:58 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/travel/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>WebGL</title>
@@ -35,24 +62,6 @@
       <pubDate>Fri, 18 May 2018 22:00:22 +0200</pubDate>
       
       <guid>https://jenyckee.github.io/tags/react-europe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>travel</title>
-      <link>https://jenyckee.github.io/tags/travel/</link>
-      <pubDate>Thu, 26 Apr 2018 15:50:52 +0200</pubDate>
-      
-      <guid>https://jenyckee.github.io/tags/travel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>biking</title>
-      <link>https://jenyckee.github.io/tags/biking/</link>
-      <pubDate>Tue, 06 Mar 2018 18:46:56 +0100</pubDate>
-      
-      <guid>https://jenyckee.github.io/tags/biking/</guid>
       <description></description>
     </item>
     
@@ -89,15 +98,6 @@
       <pubDate>Thu, 01 Feb 2018 17:46:56 +0100</pubDate>
       
       <guid>https://jenyckee.github.io/tags/typescript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bikepacking</title>
-      <link>https://jenyckee.github.io/tags/bikepacking/</link>
-      <pubDate>Thu, 14 Dec 2017 17:46:56 +0100</pubDate>
-      
-      <guid>https://jenyckee.github.io/tags/bikepacking/</guid>
       <description></description>
     </item>
     
