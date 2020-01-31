@@ -88,7 +88,7 @@
     
     <div class="content">
       <p>After exploring what the city of Brussel is exposing in its open data platform I decided to do something with the data on the Villo bikes. Villo is a local bike sharing system by the city that allows you to take out a bike at one bike station and leave it at another. The Brussels open data platform has an endpoint that gives a live feed of the availability of each of the bike stations all over the city. I thought it would be interesting to visualize over time how the bike stations are being used. Therefore I set up a task on Amazon AWS that makes a request every 5 minutes to get a status on the availabilities and stores them in a database. I let it run for the night during rush hour from 15h30 till 22h.</p>
-<p>In the visualization I displayed each of the bike stations on a map of Brussels as a dot. The size of the dot will be bigger depending on how many bikes are available. The color will be green if the amount of bikes at a given time has grown compared to the previous status check, red if the amount of bikes has lowered, blue if stable.</p>
+<p>In the visualization I displayed each of the bike stations on a map of Brussels as a dot. The size of the dot will be bigger depending on how many bikes are available.</p>
 <script src="/villoviz/index.js"></script>
 <div id="villoviz"></div>
 <p>More interesting would be if we could see what journeys are being made, i.e. an anonymized feed of bike journeys from point A to B at time T. Unfortenately I have had no response from the Brussels open data portal on the question if such data is being maintained.</p>

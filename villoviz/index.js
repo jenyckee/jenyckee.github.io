@@ -72,7 +72,7 @@ function render(data) {
         .attr("cx", d => projection(d.geometry.coordinates)[0])
         .attr("cy", d => projection(d.geometry.coordinates)[1])
         .attr("r", d => dotSize(d.fields))
-        .attr("fill", d => color(d.fields))
+        .attr("fill", d => "#4682b4")
         .on("mouseover", function(d) {
           div.transition()
              .duration(200)
@@ -105,7 +105,7 @@ function render(data) {
             .style("top", (d3.event.clientY +5) + "px");
           })
         .transition()
-        .attr("fill", d => color(d,i))
+        .attr("fill", d => "#4682b4")
         .duration(1000)
         .attr("r",  d => dotSize(d))
     })
