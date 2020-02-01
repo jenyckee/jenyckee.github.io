@@ -6,18 +6,37 @@
     <description>Recent content in Posts on Jeroen Nyckees</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jan 2020 09:03:58 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 01 Feb 2020 10:55:30 +0100</lastBuildDate>
     
 	<atom:link href="https://jenyckee.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Grand Place people and car detection</title>
+      <link>https://jenyckee.github.io/posts/grand-place/</link>
+      <pubDate>Sat, 01 Feb 2020 10:55:30 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/grand-place/</guid>
+      <description>On http://www.brussel.be/webcam-grote-markt you can find a webcam stream of the Grand Place in Brussels. When I saw this I was wondering if I could build a model to trace individual people and eventually track their behaviour while walking on one of the most touristy spots in Brussels.
+I set up a website with TensorFlow.js using the coco-ssd model but was slightly dissapointed with the results. After doing some more research I read about transfer learning and decided to try and improve model.</description>
+    </item>
+    
+    <item>
       <title>Biking the Annapurna Circuit</title>
       <link>https://jenyckee.github.io/posts/biking-the-annapurna-circuit/</link>
-      <pubDate>Sat, 25 Jan 2020 09:03:58 +0100</pubDate>
+      <pubDate>Tue, 24 Dec 2019 09:03:58 +0100</pubDate>
       
       <guid>https://jenyckee.github.io/posts/biking-the-annapurna-circuit/</guid>
       <description>During last summer I was looking for inspiration to do a long term mountain biking trip that would be challenging but pretty risk free at the same time. I had a time frame of three weeks in November so I started to look into possibilities when quickly my eye fell on a flight to Kathmandu. Nepal ticked off all the boxes I was looking for in my next trip, so without too much overthinking slightly nervous I booked the flights.</description>
+    </item>
+    
+    <item>
+      <title>Dimension scanner for medals</title>
+      <link>https://jenyckee.github.io/posts/cnc-medals/</link>
+      <pubDate>Fri, 01 Feb 2019 10:55:21 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/cnc-medals/</guid>
+      <description>I got the question from a client who was making frames for medal with a cnc machine if we could determine the dimensions of a medal from a simple picture. Today the client has to request the physical medals being mailed to him in order to be able to create the digital model that can be consumed by his CNC machine. iOS 12 comes these days with the Measure app that uses augmented reality to provide dimension information on objects that are being scanned with the camera.</description>
     </item>
     
     <item>

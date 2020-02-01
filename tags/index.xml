@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Jeroen Nyckees</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jan 2020 09:03:58 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 24 Dec 2019 09:03:58 +0100</lastBuildDate>
     
 	<atom:link href="https://jenyckee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>bikepacking</title>
       <link>https://jenyckee.github.io/tags/bikepacking/</link>
-      <pubDate>Sat, 25 Jan 2020 09:03:58 +0100</pubDate>
+      <pubDate>Tue, 24 Dec 2019 09:03:58 +0100</pubDate>
       
       <guid>https://jenyckee.github.io/tags/bikepacking/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>biking</title>
       <link>https://jenyckee.github.io/tags/biking/</link>
-      <pubDate>Sat, 25 Jan 2020 09:03:58 +0100</pubDate>
+      <pubDate>Tue, 24 Dec 2019 09:03:58 +0100</pubDate>
       
       <guid>https://jenyckee.github.io/tags/biking/</guid>
       <description></description>
@@ -32,9 +32,36 @@
     <item>
       <title>travel</title>
       <link>https://jenyckee.github.io/tags/travel/</link>
-      <pubDate>Sat, 25 Jan 2020 09:03:58 +0100</pubDate>
+      <pubDate>Tue, 24 Dec 2019 09:03:58 +0100</pubDate>
       
       <guid>https://jenyckee.github.io/tags/travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>computer vision</title>
+      <link>https://jenyckee.github.io/tags/computer-vision/</link>
+      <pubDate>Fri, 01 Feb 2019 10:55:21 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opencv</title>
+      <link>https://jenyckee.github.io/tags/opencv/</link>
+      <pubDate>Fri, 01 Feb 2019 10:55:21 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/opencv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://jenyckee.github.io/tags/python/</link>
+      <pubDate>Fri, 01 Feb 2019 10:55:21 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/tags/python/</guid>
       <description></description>
     </item>
     
