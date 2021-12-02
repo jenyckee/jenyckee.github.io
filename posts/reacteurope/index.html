@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en-us">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>React Europe 2018 | Jeroen Nyckees</title>
+
+
+<link rel="stylesheet" href="https://jenyckee.github.io/css/style.css"/><link rel='stylesheet' href='/css/custom.css'><script
+		src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+		crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.1.0/d3.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+</head>
+<body>
+
+<section class="section">
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-right">
+        </div>
+      </nav>
+      <div class="nav-center">
+        <nav class="nav-item level is-mobile">
+          <div class="nav-left">
+            <a class="nav-item" href="https://jenyckee.github.io/">
+              <img class="avatar" src="/svg/avatar.svg" alt="#">
+            </a>
+          </div>
+          <div>
+            <h1>Jeroen Nyckees</h1>
+            <div class="text-center"><a class="level-item" href='mailto:jeroen.nyckees@gmail.com' target='_blank' rel='noopener'>
+                <span class="icon">
+                  <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+                </span>
+              </a><a class="level-item" href='https://github.com/jenyckee' target='_blank' rel='noopener'>
+                <span class="icon">
+                  <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+                </span>
+              </a><a class="level-item" href='https://linkedin.com/in/jeroen-nyckees-3a191582/' target='_blank' rel='noopener'>
+                <span class="icon">
+                  <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/>
+    
+  </svg></i>
+                </span>
+              </a></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </section>
+  
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/react/">#React</a>
+
+
+
+  
+  | <a class="subtitle is-6" href="/tags/react-europe/">#React Europe</a>
+  
+
+
+      
+    </div>
+    <h2 class="subtitle is-6">May 18, 2018</h2>
+    <h1 class="title">React Europe 2018</h1>
+    
+    <div class="content">
+      <p>This week I was lucky enough to be part of the React Europe conference in Paris. I would like to write down some of the ideas that resonated with me. To do this I will focus on 3 big themes that seemed to come back in all of the talks.</p>
+<h1 id="context-and-suspense">Context and Suspense</h1>
+<p>Since React 16.3 Context and Suspense are two new features that will shape the architectures of client side React applications. Context is a feauture that has been around in the React API since quite a while. The use of it however has always been discouraged. A simple example that shows the power of it would be to show how we can simplify data fetching with it.</p>
+<script type="application/javascript" src="https://gist.github.com/jenyckee/180555233de38d2a680667d4c1212610.js"></script>
+
+<p>Suspense is an experimental feature that continues on this idea and offers extra abstractions on the lifecycle of data fetching. Therefore it provides <code>simple-cache-provider</code>. The API offers you abstractions to fetch your data and cache it for future use. Moreover it is a provider that will pass a flag that let&rsquo;s you check whether or not your data is done fetching.</p>
+<script type="application/javascript" src="https://gist.github.com/jenyckee/c2c0c6d110b00ecc5eb0454f40e865f6.js"></script>
+
+<p>Apollo&rsquo;s implementation of GraphQL plays nicely together with these new React features.</p>
+<h1 id="the-web-as-just-a-compile-target">The web as just a compile target</h1>
+<p>With projects such as <a href="https://github.com/airbnb/lona">Lona</a> and <a href="https://github.com/necolas/react-native-web">React Native Web</a> it is time to see the web as just another target and React as a high level tool that facilitates the implementation of our applications.</p>
+<p>Sven Sauleau came to convince us of this by promoting <a href="https://webassembly.org/">WebAssembly</a> as the next platform. This doesn&rsquo;t mean JavaScript will disappear but rather that we will be able to use modern languages such as C++ or Rust to compile to WASM where we need the extra performance. For example we have already seen that <a href="https://blogs.unity3d.com/2015/06/18/webgl-webassembly-and-feature-roadmap/">Unity</a> is doing efforts to support the web as compile target. This still young technology is very exciting in my opinion.</p>
+<h1 id="reasonml">ReasonML</h1>
+<p>JavaScript is great, it is very versatile and allows you to write proof of concept applications in no time. It was however never made to build large scale applications. This is where languages such as TypeScript or Flow can help you by providing a static type system. While these languages will give you some form of type safety they are still not perfect for client side application development. More recently, strongly typed languages such as Elm and <a href="https://reasonml.github.io/reason-react/">ReasonML</a> are being adopted to provide a better developer experience and quality code. ReasonML is a OCaml dialect that compiles to JavaScript and offers type safety with good JavaScript interop. It is a strongly typed language with syntax that is much more friendly to JavaScript developers than Elm and it enforces immutability. Because of the good JavaScript interop we can use <a href="https://yarnpkg.com/lang/en/">Yarn</a> and thus make use of the whole React ecosystem.</p>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+  
+    <script type="text/javascript">
+      var disqus_shortname = 'jenyckee-github-io';
+      function disqus() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+  
+      disqus();
+  
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+  </div>
+</section>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-105338404-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+</body>
+</html>
+

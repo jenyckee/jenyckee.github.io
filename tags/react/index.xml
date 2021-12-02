@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on Jeroen Nyckees</title>
+    <link>https://jenyckee.github.io/tags/react/</link>
+    <description>Recent content in React on Jeroen Nyckees</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 May 2018 22:00:22 +0200</lastBuildDate><atom:link href="https://jenyckee.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React Europe 2018</title>
+      <link>https://jenyckee.github.io/posts/reacteurope/</link>
+      <pubDate>Fri, 18 May 2018 22:00:22 +0200</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/reacteurope/</guid>
+      <description>This week I was lucky enough to be part of the React Europe conference in Paris. I would like to write down some of the ideas that resonated with me. To do this I will focus on 3 big themes that seemed to come back in all of the talks.
+Context and Suspense Since React 16.3 Context and Suspense are two new features that will shape the architectures of client side React applications.</description>
+    </item>
+    
+    <item>
+      <title>Pure reducers in Elm</title>
+      <link>https://jenyckee.github.io/posts/elm-reducers/</link>
+      <pubDate>Sat, 04 Nov 2017 17:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/elm-reducers/</guid>
+      <description>One of the most defining courses I took during university was &amp;ldquo;Functional Programming&amp;rdquo;. After being introduced to other paradigms such as object oriented programming in the bachelor years it was possible to learn Haskell in this course and thus delve deeper into the functional programming paradigm. At the end of the course I developed a web application using Snap. After that I got more involved into front end development using JavaScript and always missed the developer experience that I got when programming in Haskell.</description>
+    </item>
+    
+  </channel>
+</rss>

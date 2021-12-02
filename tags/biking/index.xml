@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>biking on Jeroen Nyckees</title>
+    <link>https://jenyckee.github.io/tags/biking/</link>
+    <description>Recent content in biking on Jeroen Nyckees</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Dec 2019 09:03:58 +0100</lastBuildDate><atom:link href="https://jenyckee.github.io/tags/biking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Biking the Annapurna Circuit</title>
+      <link>https://jenyckee.github.io/posts/biking-the-annapurna-circuit/</link>
+      <pubDate>Tue, 24 Dec 2019 09:03:58 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/biking-the-annapurna-circuit/</guid>
+      <description>During last summer I was looking for inspiration to do a long term mountain biking trip that would be challenging but pretty risk free at the same time. I had a time frame of three weeks in November so I started to look into possibilities when quickly my eye fell on a flight to Kathmandu. Nepal ticked off all the boxes I was looking for in my next trip, so without too much overthinking slightly nervous I booked the flights.</description>
+    </item>
+    
+    <item>
+      <title>Visualizing the availability of Brussels villo bikes</title>
+      <link>https://jenyckee.github.io/posts/villoviz/</link>
+      <pubDate>Tue, 06 Mar 2018 18:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/villoviz/</guid>
+      <description>After exploring what the city of Brussel is exposing in its open data platform I decided to do something with the data on the Villo bikes. Villo is a local bike sharing system by the city that allows you to take out a bike at one bike station and leave it at another. The Brussels open data platform has an endpoint that gives a live feed of the availability of each of the bike stations all over the city.</description>
+    </item>
+    
+    <item>
+      <title>Fatbiking in the Cairngorms</title>
+      <link>https://jenyckee.github.io/posts/cairngorms/</link>
+      <pubDate>Thu, 14 Dec 2017 17:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/cairngorms/</guid>
+      <description>This winter in December I took a little escape from work to the Cairngorms national park in Scotland. I had been curious about riding a fatbike for quite some time and after seeing &amp;ldquo;Mountain Bikes and Bothy Nights&amp;rdquo; by Alastair Humphreys, a great video about bothy culture I thought this would be the perfect area to do so.
+  Other than that I Recently have been intrigued by steel bike frames.</description>
+    </item>
+    
+  </channel>
+</rss>

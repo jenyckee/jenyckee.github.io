@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TensorFlow on Jeroen Nyckees</title>
+    <link>https://jenyckee.github.io/tags/tensorflow/</link>
+    <description>Recent content in TensorFlow on Jeroen Nyckees</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Feb 2020 10:55:30 +0100</lastBuildDate><atom:link href="https://jenyckee.github.io/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Grand Place people and car detection</title>
+      <link>https://jenyckee.github.io/posts/grand-place/</link>
+      <pubDate>Sat, 01 Feb 2020 10:55:30 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/grand-place/</guid>
+      <description>On http://www.brussel.be/webcam-grote-markt you can find a webcam stream of the Grand Place in Brussels. When I saw this I was wondering if I could build a model to trace individual people and eventually track their behaviour while walking on one of the most touristy spots in Brussels.
+I set up a website with TensorFlow.js using the coco-ssd model but was slightly dissapointed with the results. After doing some more research I read about transfer learning and decided to try and improve model.</description>
+    </item>
+    
+  </channel>
+</rss>

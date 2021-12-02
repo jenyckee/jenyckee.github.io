@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on Jeroen Nyckees</title>
+    <link>https://jenyckee.github.io/</link>
+    <description>Recent content in About on Jeroen Nyckees</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Feb 2020 10:55:30 +0100</lastBuildDate><atom:link href="https://jenyckee.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Grand Place people and car detection</title>
+      <link>https://jenyckee.github.io/posts/grand-place/</link>
+      <pubDate>Sat, 01 Feb 2020 10:55:30 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/grand-place/</guid>
+      <description>On http://www.brussel.be/webcam-grote-markt you can find a webcam stream of the Grand Place in Brussels. When I saw this I was wondering if I could build a model to trace individual people and eventually track their behaviour while walking on one of the most touristy spots in Brussels.
+I set up a website with TensorFlow.js using the coco-ssd model but was slightly dissapointed with the results. After doing some more research I read about transfer learning and decided to try and improve model.</description>
+    </item>
+    
+    <item>
+      <title>Biking the Annapurna Circuit</title>
+      <link>https://jenyckee.github.io/posts/biking-the-annapurna-circuit/</link>
+      <pubDate>Tue, 24 Dec 2019 09:03:58 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/biking-the-annapurna-circuit/</guid>
+      <description>During last summer I was looking for inspiration to do a long term mountain biking trip that would be challenging but pretty risk free at the same time. I had a time frame of three weeks in November so I started to look into possibilities when quickly my eye fell on a flight to Kathmandu. Nepal ticked off all the boxes I was looking for in my next trip, so without too much overthinking slightly nervous I booked the flights.</description>
+    </item>
+    
+    <item>
+      <title>Dimension scanner for medals</title>
+      <link>https://jenyckee.github.io/posts/cnc-medals/</link>
+      <pubDate>Fri, 01 Feb 2019 10:55:21 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/cnc-medals/</guid>
+      <description>I got the question from a client who was making frames for medal with a cnc machine if we could determine the dimensions of a medal from a simple picture. Today the client has to request the physical medals being mailed to him in order to be able to create the digital model that can be consumed by his CNC machine. iOS 12 comes these days with the Measure app that uses augmented reality to provide dimension information on objects that are being scanned with the camera.</description>
+    </item>
+    
+    <item>
+      <title>WebGL Experiment</title>
+      <link>https://jenyckee.github.io/posts/webglexperiment/</link>
+      <pubDate>Fri, 14 Sep 2018 16:11:19 +0200</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/webglexperiment/</guid>
+      <description>This scene is a small project that I built in my free time that allowed me to experiment with writing custom materials shader textures and post processing effects in Three.js. Ping me if you’re interested in the source code.
+ </description>
+    </item>
+    
+    <item>
+      <title>React Europe 2018</title>
+      <link>https://jenyckee.github.io/posts/reacteurope/</link>
+      <pubDate>Fri, 18 May 2018 22:00:22 +0200</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/reacteurope/</guid>
+      <description>This week I was lucky enough to be part of the React Europe conference in Paris. I would like to write down some of the ideas that resonated with me. To do this I will focus on 3 big themes that seemed to come back in all of the talks.
+Context and Suspense Since React 16.3 Context and Suspense are two new features that will shape the architectures of client side React applications.</description>
+    </item>
+    
+    <item>
+      <title>&#34;They Work for Nothing&#34;</title>
+      <link>https://jenyckee.github.io/posts/they-work-for-nothing/</link>
+      <pubDate>Thu, 26 Apr 2018 15:50:52 +0200</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/they-work-for-nothing/</guid>
+      <description>Porto Moniz, a quiet little town on the most north eastern end of the island Madeira. In this little town one of the famous levada trails on the island finds its head. The trail takes you along an amazing irrigation channel leading water from high up in the mountains through the valley down to the people in this little town. After my girlfriend and I completed the trail we hitchhiked back to the little town and stayed in the local youth hostel.</description>
+    </item>
+    
+    <item>
+      <title>Visualizing the availability of Brussels villo bikes</title>
+      <link>https://jenyckee.github.io/posts/villoviz/</link>
+      <pubDate>Tue, 06 Mar 2018 18:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/villoviz/</guid>
+      <description>After exploring what the city of Brussel is exposing in its open data platform I decided to do something with the data on the Villo bikes. Villo is a local bike sharing system by the city that allows you to take out a bike at one bike station and leave it at another. The Brussels open data platform has an endpoint that gives a live feed of the availability of each of the bike stations all over the city.</description>
+    </item>
+    
+    <item>
+      <title>TypeScript</title>
+      <link>https://jenyckee.github.io/posts/polymorphism-in-typescript/</link>
+      <pubDate>Thu, 01 Feb 2018 17:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/polymorphism-in-typescript/</guid>
+      <description>Intention The intention of this post is to sum up some thoughts on TypeScript that come from my own experience of working with it.
+As with all engineering the right tool for the job is always dependent on the context of the job. The context where I would consider using TypeScript would be on projects that have a large codebase that will be developed and maintained by a large team of developers that have preliminary JavaScript or TypeScript knowledge.</description>
+    </item>
+    
+    <item>
+      <title>Fatbiking in the Cairngorms</title>
+      <link>https://jenyckee.github.io/posts/cairngorms/</link>
+      <pubDate>Thu, 14 Dec 2017 17:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/cairngorms/</guid>
+      <description>This winter in December I took a little escape from work to the Cairngorms national park in Scotland. I had been curious about riding a fatbike for quite some time and after seeing &amp;ldquo;Mountain Bikes and Bothy Nights&amp;rdquo; by Alastair Humphreys, a great video about bothy culture I thought this would be the perfect area to do so.
+  Other than that I Recently have been intrigued by steel bike frames.</description>
+    </item>
+    
+    <item>
+      <title>Pure reducers in Elm</title>
+      <link>https://jenyckee.github.io/posts/elm-reducers/</link>
+      <pubDate>Sat, 04 Nov 2017 17:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/elm-reducers/</guid>
+      <description>One of the most defining courses I took during university was &amp;ldquo;Functional Programming&amp;rdquo;. After being introduced to other paradigms such as object oriented programming in the bachelor years it was possible to learn Haskell in this course and thus delve deeper into the functional programming paradigm. At the end of the course I developed a web application using Snap. After that I got more involved into front end development using JavaScript and always missed the developer experience that I got when programming in Haskell.</description>
+    </item>
+    
+    <item>
+      <title>Time for a website</title>
+      <link>https://jenyckee.github.io/posts/hugo/</link>
+      <pubDate>Tue, 12 Sep 2017 18:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/hugo/</guid>
+      <description>My set up For this site I&amp;rsquo;ll be using Hugo, a static site generator that I&amp;rsquo;ve been using for several projects at the moment. Because in my search for a good and easy solution to host on Github pages I didn&amp;rsquo;t find a good source of information, I will start off with giving a short guide on how I set up my site.
+Assuming that you have set up your website using the guide on the Hugo website you will have a folder with the source of your website.</description>
+    </item>
+    
+  </channel>
+</rss>

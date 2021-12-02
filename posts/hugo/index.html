@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en-us">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Time for a website | Jeroen Nyckees</title>
+
+
+<link rel="stylesheet" href="https://jenyckee.github.io/css/style.css"/><link rel='stylesheet' href='/css/custom.css'><script
+		src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+		crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.1.0/d3.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+</head>
+<body>
+
+<section class="section">
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-right">
+        </div>
+      </nav>
+      <div class="nav-center">
+        <nav class="nav-item level is-mobile">
+          <div class="nav-left">
+            <a class="nav-item" href="https://jenyckee.github.io/">
+              <img class="avatar" src="/svg/avatar.svg" alt="#">
+            </a>
+          </div>
+          <div>
+            <h1>Jeroen Nyckees</h1>
+            <div class="text-center"><a class="level-item" href='mailto:jeroen.nyckees@gmail.com' target='_blank' rel='noopener'>
+                <span class="icon">
+                  <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+                </span>
+              </a><a class="level-item" href='https://github.com/jenyckee' target='_blank' rel='noopener'>
+                <span class="icon">
+                  <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+                </span>
+              </a><a class="level-item" href='https://linkedin.com/in/jeroen-nyckees-3a191582/' target='_blank' rel='noopener'>
+                <span class="icon">
+                  <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/>
+    
+  </svg></i>
+                </span>
+              </a></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </section>
+  
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/git/">#git</a>
+
+
+
+  
+  | <a class="subtitle is-6" href="/tags/hugo/">#hugo</a>
+  
+
+
+      
+    </div>
+    <h2 class="subtitle is-6">September 12, 2017</h2>
+    <h1 class="title">Time for a website</h1>
+    
+    <div class="content">
+      <h2 id="my-set-up">My set up</h2>
+<p>For this site I&rsquo;ll be using Hugo, a static site generator that I&rsquo;ve been using for several projects at the moment. Because in my search for a good and easy solution to host on Github pages I didn&rsquo;t find a good source of information, I will start off with giving a short guide on how I set up my site.</p>
+<p>Assuming that you have set up your website using the guide on the Hugo website you will have a folder with the source of your website. To deploy to Github Pages you will need to create a repository that has the index.html file at the root on the master branch. Unfortanetly Hugo builds the pages into a folder named public. To overcome this, I have a solution based on <!-- raw HTML omitted -->this<!-- raw HTML omitted --> approach. I keep the source for the website in my local repository on a develop branch, and the build on the master.</p>
+<h2 id="github-setup">Github Setup</h2>
+<p>After creating the repository on Github, add a .gitignore file to the master branch that looks like this</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">themes/
+public/</code></pre></div>
+<p>This will make sure the build of the website and the theme being stays untracked in the Git repository.</p>
+<h2 id="local-setup">Local Setup</h2>
+<p>Then locally, initialize a Git repository at the root of your site and checkout a develop branch immediately. Commit your files and add Github as a remote.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
+<span style="color:#75715e"># create new branch called develop and switch to it.</span>
+git checkout -b develop
+<span style="color:#75715e"># track all the source files for our site.</span>
+git add .
+<span style="color:#75715e"># make our first commit</span>
+git commit -m <span style="color:#e6db74">&#34;initial commit.&#34;</span>
+<span style="color:#75715e"># and add the GitHub repository as a remote.</span>
+git remote add origin &lt;URL to your GitHub pages repository&gt;</code></pre></div>
+<h2 id="deploying">Deploying</h2>
+<p>To deploy create a file deploy.sh and make it executable. This script will build the website into the public folder and then checkout to the master branch. Since the public folder is untracked we can use this to copy everything to the root, commit that to the master branch and push that to the Github remote. Once that is done we have succesfully deployed, we can now checkout the develop branch again and delete the master branch locally.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Temporarily store uncommited changes</span>
+git stash
+
+<span style="color:#75715e"># Verify correct branch</span>
+git checkout develop
+
+<span style="color:#75715e"># Build new files</span>
+hugo
+
+<span style="color:#75715e"># Get previous files</span>
+git fetch --all
+git checkout -b master --track origin/master
+
+<span style="color:#75715e"># Overwrite existing files with new files</span>
+cp -a public/. .
+
+<span style="color:#75715e"># Commit</span>
+git add -A
+git commit -m <span style="color:#e6db74">&#34;Publish.&#34;</span>
+
+<span style="color:#75715e"># Push</span>
+git push origin master:master
+
+<span style="color:#75715e"># Restoration</span>
+git checkout develop
+git branch -D master
+git stash pop</code></pre></div>
+<h1 id="keep-source-private">Keep source private</h1>
+<p>Finally I host the actual source of my website on a private Bitbucket account by setting your upstream for the develop branch to the Bitbucket repository.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Add bitbucket as a remote</span>
+git remote add bitbucket https://bitbucket.com/user/repo.git
+
+<span style="color:#75715e"># Push and set upstream for remote branch to bitbucket repo</span>
+git push --set-upstream bitbucket develop</code></pre></div>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+  
+    <script type="text/javascript">
+      var disqus_shortname = 'jenyckee-github-io';
+      function disqus() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+  
+      disqus();
+  
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+  </div>
+</section>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-105338404-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Jeroen Nyckees</title>
+    <link>https://jenyckee.github.io/tags/git/</link>
+    <description>Recent content in git on Jeroen Nyckees</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Sep 2017 18:46:56 +0100</lastBuildDate><atom:link href="https://jenyckee.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time for a website</title>
+      <link>https://jenyckee.github.io/posts/hugo/</link>
+      <pubDate>Tue, 12 Sep 2017 18:46:56 +0100</pubDate>
+      
+      <guid>https://jenyckee.github.io/posts/hugo/</guid>
+      <description>My set up For this site I&amp;rsquo;ll be using Hugo, a static site generator that I&amp;rsquo;ve been using for several projects at the moment. Because in my search for a good and easy solution to host on Github pages I didn&amp;rsquo;t find a good source of information, I will start off with giving a short guide on how I set up my site.
+Assuming that you have set up your website using the guide on the Hugo website you will have a folder with the source of your website.</description>
+    </item>
+    
+  </channel>
+</rss>
