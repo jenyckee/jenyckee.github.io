@@ -1,21 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>git on Jeroen Nyckees</title>
-    <link>https://jenyckee.github.io/tags/git/</link>
-    <description>Recent content in git on Jeroen Nyckees</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 12 Sep 2017 18:46:56 +0100</lastBuildDate><atom:link href="https://jenyckee.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Time for a website</title>
-      <link>https://jenyckee.github.io/posts/hugo/</link>
-      <pubDate>Tue, 12 Sep 2017 18:46:56 +0100</pubDate>
-      
-      <guid>https://jenyckee.github.io/posts/hugo/</guid>
-      <description>My set up For this site I&amp;rsquo;ll be using Hugo, a static site generator that I&amp;rsquo;ve been using for several projects at the moment. Because in my search for a good and easy solution to host on Github pages I didn&amp;rsquo;t find a good source of information, I will start off with giving a short guide on how I set up my site.
-Assuming that you have set up your website using the guide on the Hugo website you will have a folder with the source of your website.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Jeroen Nyckees</title><link>https://jenyckee.github.io/tags/git/</link><description>Recent content in Git on Jeroen Nyckees</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 12 Sep 2017 18:46:56 +0100</lastBuildDate><atom:link href="https://jenyckee.github.io/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Time for a website</title><link>https://jenyckee.github.io/posts/hugo/</link><pubDate>Tue, 12 Sep 2017 18:46:56 +0100</pubDate><guid>https://jenyckee.github.io/posts/hugo/</guid><description>&lt;h2 id="my-set-up"&gt;My set up&lt;/h2&gt;
+&lt;p&gt;For this site I&amp;rsquo;ll be using Hugo, a static site generator that I&amp;rsquo;ve been using for several projects at the moment. Because in my search for a good and easy solution to host on Github pages I didn&amp;rsquo;t find a good source of information, I will start off with giving a short guide on how I set up my site.&lt;/p&gt;
+&lt;p&gt;Assuming that you have set up your website using the guide on the Hugo website you will have a folder with the source of your website. To deploy to Github Pages you will need to create a repository that has the index.html file at the root on the master branch. Unfortanetly Hugo builds the pages into a folder named public. To overcome this, I have a solution based on &lt;!-- raw HTML omitted --&gt;this&lt;!-- raw HTML omitted --&gt; approach. I keep the source for the website in my local repository on a develop branch, and the build on the master.&lt;/p&gt;</description></item></channel></rss>

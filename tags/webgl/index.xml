@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>WebGL on Jeroen Nyckees</title>
-    <link>https://jenyckee.github.io/tags/webgl/</link>
-    <description>Recent content in WebGL on Jeroen Nyckees</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 14 Sep 2018 16:11:19 +0200</lastBuildDate><atom:link href="https://jenyckee.github.io/tags/webgl/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>WebGL Experiment</title>
-      <link>https://jenyckee.github.io/posts/webglexperiment/</link>
-      <pubDate>Fri, 14 Sep 2018 16:11:19 +0200</pubDate>
-      
-      <guid>https://jenyckee.github.io/posts/webglexperiment/</guid>
-      <description>This scene is a small project that I built in my free time that allowed me to experiment with writing custom materials shader textures and post processing effects in Three.js. Ping me if you’re interested in the source code.
- </description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WebGL on Jeroen Nyckees</title><link>https://jenyckee.github.io/tags/webgl/</link><description>Recent content in WebGL on Jeroen Nyckees</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 14 Sep 2018 16:11:19 +0200</lastBuildDate><atom:link href="https://jenyckee.github.io/tags/webgl/index.xml" rel="self" type="application/rss+xml"/><item><title>WebGL Experiment</title><link>https://jenyckee.github.io/posts/webglexperiment/</link><pubDate>Fri, 14 Sep 2018 16:11:19 +0200</pubDate><guid>https://jenyckee.github.io/posts/webglexperiment/</guid><description>&lt;p&gt;This scene is a small project that I built in my free time that allowed me to experiment with writing custom materials shader textures and post processing effects in Three.js. Ping me if you’re interested in the source code.&lt;/p&gt;
+&lt;iframe width="100%" height="400px" src="https://bright-guitar.surge.sh"&gt;&lt;/iframe&gt;</description></item></channel></rss>
