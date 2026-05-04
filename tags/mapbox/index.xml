@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mapbox on Jeroen Nyckees</title>
-    <link>http://localhost:50707/tags/mapbox/</link>
+    <link>http://localhost:52792/tags/mapbox/</link>
     <description>Recent content in Mapbox on Jeroen Nyckees</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Nov 2018 11:40:33 +0100</lastBuildDate>
-    <atom:link href="http://localhost:50707/tags/mapbox/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:52792/tags/mapbox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Visualising Strava bike rides</title>
-      <link>http://localhost:50707/posts/strava-trips/</link>
+      <link>http://localhost:52792/posts/strava-trips/</link>
       <pubDate>Thu, 08 Nov 2018 11:40:33 +0100</pubDate>
-      <guid>http://localhost:50707/posts/strava-trips/</guid>
+      <guid>http://localhost:52792/posts/strava-trips/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;In the mourning process about last summer I decided to build something nice. Like most of us I meticulously record every bike ride I do with a popular app among athletes called Strava. Strava is often described as the Facebook for athletes. It works by simply hitting the start button when going out for a run or bike ride and it will record a series of GPS coordinates until you hit stop again. Afterwards the athlete gets a report that shows a map with the route followed alongside with some graphs on speed, hearth rate and other data.&lt;/p&gt;</description>
     </item>
   </channel>
