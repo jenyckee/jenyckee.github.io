@@ -1,0 +1,221 @@
+<!doctype html><html lang=en-us><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><script async src="https://www.googletagmanager.com/gtag/js?id=G-V8B0E7XY81"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-V8B0E7XY81")</script><title>Building an AI-Powered Salary Search Engine with Local LLMs and Vector Search | Jeroen Nyckees</title>
+<link rel=canonical href=https://jenyckee.github.io/posts/besalary-ai-salary-search/><link rel=icon type=image/png href=/favicon.ico><link rel=alternate type=application/rss+xml title="Jeroen Nyckees" href=https://jenyckee.github.io/index.xml><link rel=stylesheet href=/css/terminal.css><body><div class=terminal-wrapper><header class=terminal-header><nav class=terminal-nav><a class=site-title href=https://jenyckee.github.io/>Jeroen Nyckees</a><div class=nav-links><a href=/>/posts</a>
+<a href=https://github.com/jenyckee target=_blank rel=noopener>[github]</a><a href=https://linkedin.com/in/jeroen-n-3a191582/ target=_blank rel=noopener>[linkedin]</a><a href=mailto:jeroen.nyckees@gmail.com target=_blank rel=noopener>[email]</a></div></nav></header><main class=terminal-main><div class=terminal-prompt><span class=prompt-user>~</span><span class=prompt-sep>$</span> cat posts/besalary-ai-salary-search.md</div><article class=post-single><div class=post-meta><span class=post-date>Apr 24 2026</span>
+<span class=post-tags><a href=/tags/ai/>#AI</a>
+|<a href=/tags/llm/>#LLM</a>
+|<a href=/tags/ollama/>#Ollama</a>
+|<a href=/tags/next.js/>#Next.js</a>
+|<a href=/tags/postgresql/>#PostgreSQL</a>
+|<a href=/tags/vector-search/>#Vector Search</a>
+|<a href=/tags/python/>#Python</a></span></div><h1 class=post-title>Building an AI-Powered Salary Search Engine with Local LLMs and Vector Search</h1><div class=post-content><p>What if you could search for salaries not by exact keywords, but by describing a job in natural language? &ldquo;Senior developer in Brussels with a company car&rdquo; or &ldquo;nurse working in Antwerp&rdquo; — and get relevant results based on semantic similarity rather than string matching.</p><p>This is exactly what I built with <strong>BeSalary</strong>: an AI-powered salary search engine that extracts structured data from Reddit posts using local LLMs and enables semantic search through vector embeddings. You can try it live at <a href=https://besalary-wine.vercel.app/>besalary-wine.vercel.app</a>.</p><p>In this post, I&rsquo;ll walk through the entire pipeline: from automated data collection with GitHub Actions, to structured extraction with Ollama, to vector search with pgvector, and finally deployment on Vercel.</p><h2 id=the-problem-unstructured-salary-data>The Problem: Unstructured Salary Data</h2><p>The Belgian subreddit <a href=https://www.reddit.com/r/besalary/>r/besalary</a> is a goldmine of salary information. Users post their compensation packages following a semi-structured template covering everything from gross/net salary to benefits like meal vouchers, company cars, and vacation days.</p><p>The challenge? While the posts follow a template, they&rsquo;re still free-form text with variations, typos, and inconsistencies. I wanted to:</p><ol><li><strong>Automatically collect</strong> new posts as they appear</li><li><strong>Extract structured data</strong> from unstructured text using AI</li><li><strong>Enable semantic search</strong> so users can find similar jobs by description</li><li><strong>Deploy a simple frontend</strong> to make it accessible</li></ol><h2 id=part-1-automated-data-collection-with-praw-and-github-actions>Part 1: Automated Data Collection with PRAW and GitHub Actions</h2><p>The first step is collecting Reddit posts automatically. I used <a href=https://praw.readthedocs.io/>PRAW</a> (Python Reddit API Wrapper) to fetch posts from r/besalary and store them in a PostgreSQL database hosted on Supabase.</p><h3 id=the-reddit-scraper>The Reddit Scraper</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> praw
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> uuid
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> datetime <span style=color:#f92672>import</span> datetime
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> supabase <span style=color:#f92672>import</span> create_client, Client
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Initialize Reddit client</span>
+</span></span><span style=display:flex><span>reddit <span style=color:#f92672>=</span> praw<span style=color:#f92672>.</span>Reddit(
+</span></span><span style=display:flex><span>    client_id<span style=color:#f92672>=</span>os<span style=color:#f92672>.</span>environ<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;PRAW_CLIENT_ID&#34;</span>),
+</span></span><span style=display:flex><span>    client_secret<span style=color:#f92672>=</span>os<span style=color:#f92672>.</span>environ<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;PRAW_CLIENT_SECRET&#34;</span>),
+</span></span><span style=display:flex><span>    password<span style=color:#f92672>=</span>os<span style=color:#f92672>.</span>environ<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;PRAW_PASSWORD&#34;</span>),
+</span></span><span style=display:flex><span>    user_agent<span style=color:#f92672>=</span>os<span style=color:#f92672>.</span>environ<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;PRAW_USER_AGENT&#34;</span>, <span style=color:#e6db74>&#34;besalary&#34;</span>),
+</span></span><span style=display:flex><span>    username<span style=color:#f92672>=</span>os<span style=color:#f92672>.</span>environ<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;PRAW_USERNAME&#34;</span>),
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Fetch hot posts from the subreddit</span>
+</span></span><span style=display:flex><span>posts <span style=color:#f92672>=</span> reddit<span style=color:#f92672>.</span>subreddit(<span style=color:#e6db74>&#34;besalary&#34;</span>)<span style=color:#f92672>.</span>hot(limit<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Transform and collect posts</span>
+</span></span><span style=display:flex><span>list_of_items <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> post <span style=color:#f92672>in</span> posts:
+</span></span><span style=display:flex><span>    list_of_items<span style=color:#f92672>.</span>append({
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;uuid&#34;</span>: str(uuid<span style=color:#f92672>.</span>uuid5(uuid<span style=color:#f92672>.</span>NAMESPACE_URL, <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;reddit_post:</span><span style=color:#e6db74>{</span>post<span style=color:#f92672>.</span>id<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;title&#34;</span>: post<span style=color:#f92672>.</span>title,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;selftext&#34;</span>: post<span style=color:#f92672>.</span>selftext,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;created_utc&#34;</span>: datetime<span style=color:#f92672>.</span>utcfromtimestamp(post<span style=color:#f92672>.</span>created_utc)<span style=color:#f92672>.</span>isoformat(),
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;permalink&#34;</span>: post<span style=color:#f92672>.</span>permalink,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;reddit_id&#34;</span>: post<span style=color:#f92672>.</span>id,
+</span></span><span style=display:flex><span>    })
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Upsert to Supabase (handles duplicates via reddit_id)</span>
+</span></span><span style=display:flex><span>supabase<span style=color:#f92672>.</span>table(<span style=color:#e6db74>&#34;reddit_post&#34;</span>)<span style=color:#f92672>.</span>upsert(
+</span></span><span style=display:flex><span>    list_of_items, 
+</span></span><span style=display:flex><span>    on_conflict<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;reddit_id&#34;</span>
+</span></span><span style=display:flex><span>)<span style=color:#f92672>.</span>execute()
+</span></span></code></pre></div><p>The key insight here is using <code>uuid5</code> with the Reddit post ID to generate deterministic UUIDs. This ensures idempotency — running the script multiple times won&rsquo;t create duplicates.</p><h3 id=scheduling-with-github-actions>Scheduling with GitHub Actions</h3><p>To keep the data fresh, I set up a GitHub Actions workflow that runs daily:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>on</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>push</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>branches</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#ae81ff>main</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>schedule</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>cron</span>: <span style=color:#e6db74>&#39;27 15 * * *&#39;</span>  <span style=color:#75715e># Daily at 15:27 UTC</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>build</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>environment</span>: <span style=color:#ae81ff>secrets</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@v2</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/setup-python@v4</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>python-version</span>: <span style=color:#e6db74>&#39;3.10&#39;</span>
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>install python packages</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          python -m pip install --upgrade pip
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          pip install -r requirements.txt</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>execute py script</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>PRAW_CLIENT_ID</span>: <span style=color:#ae81ff>${{ secrets.PRAW_CLIENT_ID }}</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>PRAW_CLIENT_SECRET</span>: <span style=color:#ae81ff>${{ secrets.PRAW_CLIENT_SECRET }}</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>PRAW_PASSWORD</span>: <span style=color:#ae81ff>${{ secrets.PRAW_PASSWORD }}</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>SUPABASE_URL</span>: <span style=color:#ae81ff>${{ secrets.SUPABASE_URL }}</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>SUPABASE_SERVICE_ROLE_KEY</span>: <span style=color:#ae81ff>${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>python besalary.py</span>
+</span></span></code></pre></div><p>This approach has several advantages:</p><ul><li><strong>Zero infrastructure cost</strong> — GitHub Actions free tier is more than enough</li><li><strong>Automatic retries</strong> — GitHub handles failures gracefully</li><li><strong>Secret management</strong> — Credentials are stored securely in GitHub Secrets</li><li><strong>Audit trail</strong> — Every run is logged and visible in the Actions tab</li></ul><h3 id=the-data-quality-problem>The Data Quality Problem</h3><p>Not every post on r/besalary contains actual salary data. Many posts are questions about salary negotiation, discussions about benefits, or off-topic content. Running LLM extraction on these wastes compute and pollutes the database with hallucinated data.</p><p>I needed a way to pre-filter posts before sending them to the extraction pipeline. The solution? A simple labeling tool with keyboard shortcuts for rapid annotation.</p><p><img src=/img/besalary/label_tool.png alt="Labeling tool interface"></p><p>The tool displays each post with <strong>Pass</strong> (J) and <strong>Approve</strong> (L) buttons. A progress bar shows how many posts have been labeled out of the total (~9600 posts). This human-in-the-loop approach lets me quickly flag which posts actually contain salary information worth extracting.</p><p>The labeled data feeds back into the pipeline: only posts marked as valid (<code>should_attempt = true</code>) get sent to the LLM for extraction. This reduced wasted extraction attempts by roughly 40% and significantly improved data quality.</p><h2 id=part-2-structured-extraction-with-ollama-and-pydantic>Part 2: Structured Extraction with Ollama and Pydantic</h2><p>Now comes the interesting part: extracting structured salary data from free-form Reddit posts. I chose to use <a href=https://ollama.ai/>Ollama</a> to run LLMs locally, specifically the <code>llama3.2</code> model.</p><h3 id=why-local-llms>Why Local LLMs?</h3><ol><li><strong>Privacy</strong> — Salary data is sensitive; keeping it local avoids sending it to external APIs</li><li><strong>Cost</strong> — No per-token charges for processing hundreds of posts</li><li><strong>Control</strong> — Full control over the model and its behavior</li><li><strong>Speed</strong> — No network latency for inference</li></ol><h3 id=the-pydantic-schema>The Pydantic Schema</h3><p>First, I defined a strict schema for the extracted data using Pydantic:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pydantic <span style=color:#f92672>import</span> BaseModel
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>BesalaryEntry</span>(BaseModel):
+</span></span><span style=display:flex><span>    post_id: str
+</span></span><span style=display:flex><span>    age: int
+</span></span><span style=display:flex><span>    education: str
+</span></span><span style=display:flex><span>    work_experience: int
+</span></span><span style=display:flex><span>    sector: str
+</span></span><span style=display:flex><span>    amount_of_employees: int
+</span></span><span style=display:flex><span>    multinational: bool
+</span></span><span style=display:flex><span>    job_title: str
+</span></span><span style=display:flex><span>    job_description: str
+</span></span><span style=display:flex><span>    city_region_of_work: str
+</span></span><span style=display:flex><span>    official_hours_week: int
+</span></span><span style=display:flex><span>    vacation_days_year: int
+</span></span><span style=display:flex><span>    gross_salary_month: int
+</span></span><span style=display:flex><span>    net_salary_month: int
+</span></span><span style=display:flex><span>    netto_compensation: int
+</span></span><span style=display:flex><span>    salary_car: str
+</span></span><span style=display:flex><span>    thirteenth_month: str
+</span></span><span style=display:flex><span>    meal_vouchers: str
+</span></span><span style=display:flex><span>    ecocheques: str
+</span></span><span style=display:flex><span>    salary_car_bool: bool
+</span></span><span style=display:flex><span>    thirteenth_month_bool: bool
+</span></span><span style=display:flex><span>    meal_vouchers_bool: bool
+</span></span><span style=display:flex><span>    ecocheques_bool: bool
+</span></span></code></pre></div><p>This schema serves multiple purposes:</p><ul><li><strong>Validation</strong> — Ensures extracted data matches expected types</li><li><strong>Documentation</strong> — Self-documenting structure</li><li><strong>LLM guidance</strong> — The JSON schema is passed to Ollama for structured output</li></ul><h3 id=the-extraction-pipeline>The Extraction Pipeline</h3><p>The extraction script processes posts in batches, using Ollama&rsquo;s structured output feature:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> ollama <span style=color:#f92672>import</span> chat
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pydantic_model <span style=color:#f92672>import</span> BesalaryEntry
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>process_post</span>(row):
+</span></span><span style=display:flex><span>    salary_query <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Extract salary and job information from this Belgian salary post.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Post Title: </span><span style=color:#e6db74>{</span>row[<span style=color:#e6db74>&#39;title&#39;</span>]<span style=color:#e6db74>}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Post Content: </span><span style=color:#e6db74>{</span>row[<span style=color:#e6db74>&#39;selftext&#39;</span>]<span style=color:#e6db74>}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Please extract the following information if available:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- Personal info: age, education, work experience
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- Job details: title, description, sector/industry, seniority
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- Company: number of employees, multinational status
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- Salary: gross monthly, net monthly, 13th month details
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- Benefits: meal vouchers, ecocheques, car/mobility
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- Work conditions: official hours per week, vacation days
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- Location: city/region of work
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Be sure to look for information in sections like:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- PERSONALIA (for age, education)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- EMPLOYER PROFILE (for sector, employees, multinational)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- CONTRACT &amp; CONDITIONS (for job title, hours, vacation)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- SALARY (for all salary and benefit details)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- MOBILITY (for city/region and commute)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    response <span style=color:#f92672>=</span> chat(
+</span></span><span style=display:flex><span>        messages<span style=color:#f92672>=</span>[
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#39;role&#39;</span>: <span style=color:#e6db74>&#39;system&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#39;content&#39;</span>: <span style=color:#e6db74>&#39;You are an expert at extracting structured salary &#39;</span>
+</span></span><span style=display:flex><span>                           <span style=color:#e6db74>&#39;information from Belgian salary posts.&#39;</span>
+</span></span><span style=display:flex><span>            },
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#39;role&#39;</span>: <span style=color:#e6db74>&#39;user&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#39;content&#39;</span>: salary_query
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        ],
+</span></span><span style=display:flex><span>        model<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;llama3.2&#34;</span>,
+</span></span><span style=display:flex><span>        format<span style=color:#f92672>=</span>BesalaryEntry<span style=color:#f92672>.</span>model_json_schema(),  <span style=color:#75715e># Structured output!</span>
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Validate and parse the response</span>
+</span></span><span style=display:flex><span>    extracted_data <span style=color:#f92672>=</span> BesalaryEntry<span style=color:#f92672>.</span>model_validate_json(response<span style=color:#f92672>.</span>message<span style=color:#f92672>.</span>content)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> extracted_data
+</span></span></code></pre></div><p>The magic here is <code>format=BesalaryEntry.model_json_schema()</code>. This tells Ollama to constrain its output to match the Pydantic schema exactly, eliminating parsing errors and ensuring type safety.</p><h3 id=quality-control>Quality Control</h3><p>Not every extraction is successful. I implemented validation to only save entries that have the essential fields:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>if</span> (extracted_data<span style=color:#f92672>.</span>gross_salary_month <span style=color:#f92672>and</span> 
+</span></span><span style=display:flex><span>    extracted_data<span style=color:#f92672>.</span>net_salary_month <span style=color:#f92672>and</span> 
+</span></span><span style=display:flex><span>    extracted_data<span style=color:#f92672>.</span>job_title <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#66d9ef>None</span>):
+</span></span><span style=display:flex><span>    save_besalary_entry(extracted_data)
+</span></span><span style=display:flex><span>    mark_post_extracted(row[<span style=color:#e6db74>&#39;reddit_id&#39;</span>])
+</span></span></code></pre></div><p>This ensures the database only contains usable entries with actual salary information.</p><h2 id=part-3-vector-embeddings-and-semantic-search>Part 3: Vector Embeddings and Semantic Search</h2><p>With structured data in place, the next step is enabling semantic search. Instead of keyword matching, I wanted users to describe a job and find similar entries based on meaning.</p><h3 id=generating-embeddings>Generating Embeddings</h3><p>I used the <code>nomic-embed-text</code> model through Ollama to generate 768-dimensional embeddings for each salary entry. The embeddings are created from a combination of job title and description, then stored in PostgreSQL using the <a href=https://github.com/pgvector/pgvector>pgvector</a> extension.</p><h3 id=the-search-api>The Search API</h3><p>The search endpoint generates an embedding for the user&rsquo;s query and finds the most similar entries using cosine distance:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>prisma</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;@/lib/prisma&#39;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>NextRequest</span>, <span style=color:#a6e22e>NextResponse</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;next/server&#39;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>async</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>GET</span>(<span style=color:#a6e22e>req</span>: <span style=color:#66d9ef>NextRequest</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>params</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>req</span>.<span style=color:#a6e22e>nextUrl</span>.<span style=color:#a6e22e>searchParams</span>.<span style=color:#66d9ef>get</span>(<span style=color:#e6db74>&#34;params&#34;</span>) <span style=color:#f92672>??</span> <span style=color:#e6db74>&#39;&#39;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Generate embedding for the search query using Nomic API
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>response</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>fetch</span>(<span style=color:#e6db74>&#39;https://api-atlas.nomic.ai/v1/embedding/text&#39;</span>, {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>method</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;POST&#39;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>headers</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#39;Content-Type&#39;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;application/json&#39;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#39;Authorization&#39;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;Bearer &#39;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>process</span>.<span style=color:#a6e22e>env</span>.<span style=color:#a6e22e>NOMIC_API_KEY</span>
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>body</span>: <span style=color:#66d9ef>JSON.stringify</span>({
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>texts</span><span style=color:#f92672>:</span> [<span style=color:#a6e22e>params</span>],
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>task_type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;search_document&#39;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>max_tokens_per_text</span>: <span style=color:#66d9ef>8192</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>dimensionality</span>: <span style=color:#66d9ef>768</span>
+</span></span><span style=display:flex><span>        })
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>data</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>json</span>();
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>nomicEmbedding</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>stringify</span>(<span style=color:#a6e22e>data</span>.<span style=color:#a6e22e>embeddings</span>[<span style=color:#ae81ff>0</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Find the 20 most similar entries using cosine similarity
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>entries</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>prisma</span>.<span style=color:#a6e22e>$queryRaw</span>&lt;<span style=color:#f92672>BesalaryEntry</span><span style=color:#960050;background-color:#1e0010>[]</span>&gt;<span style=color:#e6db74>`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        SELECT e.*
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        FROM embeddings em
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        JOIN &#34;BesalaryEntry&#34; e ON em.entry_uuid = e.uuid
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        WHERE e.gross_salary_month IS NOT NULL
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          AND e.net_salary_month IS NOT NULL
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          AND e.job_title IS NOT NULL
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          AND e.job_title != &#39;&#39;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        ORDER BY em.nomic &lt;-&gt; </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>nomicEmbedding</span><span style=color:#e6db74>}</span><span style=color:#e6db74>::vector
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        LIMIT 20;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    `</span>;
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>NextResponse</span>.<span style=color:#a6e22e>json</span>(<span style=color:#a6e22e>entries</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>The <code>&lt;-></code> operator is pgvector&rsquo;s cosine distance operator. Lower values mean more similar vectors, so we order ascending and limit to 20 results.</p><h2 id=part-4-deployment>Part 4: Deployment</h2><p>The frontend is a Next.js application deployed on Vercel with automatic deployments from the main branch. The database connection uses Prisma with connection pooling optimized for serverless environments.</p><h2 id=database-schema>Database Schema</h2><p>The Prisma schema ties everything together:</p><pre tabindex=0><code class=language-prisma data-lang=prisma>model reddit_post {
+  uuid          String          @id @default(cuid())
+  created_utc   DateTime        @db.Timestamptz(6)
+  title         String?
+  selftext      String?
+  permalink     String?
+  reddit_id     String          @unique
+  is_extracted  Boolean         @default(false)
+  is_attempted  Boolean         @default(false)
+  BesalaryEntry BesalaryEntry[]
+}
+
+model BesalaryEntry {
+  uuid                String       @id @default(cuid())
+  age                 Int?
+  education           String?
+  job_title           String?
+  gross_salary_month  Int?
+  net_salary_month    Int?
+  // ... other fields
+  post                reddit_post? @relation(fields: [post_id], references: [reddit_id])
+  BesalaryEntryEmbeddings Embeddings[]
+}
+
+model Embeddings {
+  uuid      String                 @id @default(cuid())
+  entryUuid String                 @map(&#34;entry_uuid&#34;)
+  nomic     Unsupported(&#34;vector&#34;)?
+  entry     BesalaryEntry          @relation(fields: [entryUuid], references: [uuid])
+}
+</code></pre><h2 id=lessons-learned>Lessons Learned</h2><h3 id=what-worked-well>What Worked Well</h3><ol><li><strong>Structured LLM output</strong> — Using Pydantic schemas with Ollama&rsquo;s format parameter eliminated parsing headaches</li><li><strong>Local LLMs</strong> — Running Ollama locally was surprisingly fast and cost-effective</li><li><strong>pgvector</strong> — Vector search directly in PostgreSQL simplified the architecture significantly</li><li><strong>GitHub Actions</strong> — Perfect for scheduled data collection with zero infrastructure overhead</li></ol><h3 id=challenges>Challenges</h3><ol><li><strong>Data quality</strong> — Not all Reddit posts follow the template perfectly; some extraction failures are inevitable</li><li><strong>LLM hallucinations</strong> — Occasionally the model invents data that isn&rsquo;t in the post; validation helps but isn&rsquo;t perfect</li><li><strong>Embedding consistency</strong> — Using the same embedding model for indexing and querying is crucial</li></ol><h3 id=future-improvements>Future Improvements</h3><ul><li><strong>RAG for better extraction</strong> — Use the original post as context when displaying results</li><li><strong>Analytics dashboard</strong> — Visualize salary trends by sector, region, and experience</li><li><strong>Fine-tuning</strong> — Train a specialized model on Belgian salary data for better extraction accuracy</li><li><strong>Real-time updates</strong> — Stream new posts instead of daily batches</li></ul><h2 id=conclusion>Conclusion</h2><p>This project demonstrates a complete AI pipeline: from data collection to LLM-powered extraction to vector search to deployment. The key technologies — PRAW, Ollama, pgvector, Next.js, and Vercel — work together seamlessly to create a useful application.</p><p>The combination of local LLMs for privacy-sensitive data processing and vector embeddings for semantic search is a powerful pattern that applies to many domains beyond salary data.</p><p><strong>Try it yourself:</strong> <a href=https://besalary-wine.vercel.app/>besalary-wine.vercel.app</a></p><hr><p><em>If you&rsquo;re working on similar projects or have questions about the implementation, feel free to reach out on <a href=https://www.linkedin.com/in/jeroen-n-3a191582/>LinkedIn</a> or <a href=https://github.com/jenyckee>GitHub</a>.</em></p></div></article><div class=post-nav><a class=post-prev href=https://jenyckee.github.io/posts/grand-place/>&lt; Grand Place people and car detection</a>
+<a class=post-next href=https://jenyckee.github.io/posts/qwen-pi-local-llm/>How to run Qwen3.5-9B with llama.cpp and Pi ></a></div></main><footer class=terminal-footer><div class=footer-content><span class=terminal-prompt><span class=prompt-user>~</span><span class=prompt-sep>$</span> echo $COPYRIGHT</span><p>© Jeroen Nyckees</p><p class=footer-powered>Powered by <a href=https://gohugo.io/ target=_blank>Hugo</a> • <a href=index.xml>[RSS]</a></p></div></footer></div><script src=/js/terminal.js></script></body></html>
